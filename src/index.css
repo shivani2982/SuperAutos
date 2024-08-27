@@ -1,0 +1,500 @@
+body {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 22px;
+}
+#root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+/* Header */
+.appHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 20px; */
+}
+
+.appLogo {
+  width: 35%;
+  height: auto;
+  margin-right: 20px;
+  background-color: #EDECEB;
+}
+
+/* Home Page */
+.HomePage {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.homeButton {
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 35vw;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.itemImage {
+  width: 15vw;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.itemDetails h3 {
+  font-size: 0.8rem;
+  margin: 0.5rem 0 0.5rem;
+}
+
+
+/* Content Page*/
+main{
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%; 
+  max-height: 100vh; 
+  padding: 0.5rem;
+}
+
+.searchForm {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.25rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+  border-bottom: 1px solid #eee;
+}
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.searchForm input[type='text'] {
+  flex-grow: 1;
+  max-width: 100%;
+  min-height: 48px;
+  font-size: 0.6rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 2px solid black;
+}
+
+.Content-Buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+.Content-Buttons button {
+  padding: 0.5rem;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 50%;
+  margin: 1rem 0;
+  font-size: 0.7rem;
+}
+
+.item-list {
+  width: 100%;
+}
+
+.item-row {
+  padding: 0.75rem;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.item-name {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.item-actions button {
+  margin-left: 0.25rem;
+  padding: 0.4rem;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.5rem;
+}
+
+.item-details {
+  display: flex;
+  font-size: 0.7rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #ddd;
+}
+
+.item-price, .item-quantity {
+  padding-right: 1rem;
+}
+
+
+/* Add And edit Item Form */
+.NewItem {
+  padding: 0.5rem;
+}
+
+.NewItem h2 {
+  margin-bottom: 0.8rem;
+}
+
+.addItemForm {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+.addItemForm label {
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.addItemForm input {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.addItemForm button {
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  background-color: white;
+  cursor: pointer;
+  width: 50%;
+  margin-top: 1rem;
+  font-size: 0.7rem;
+}
+
+.cart {
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+.cart.active {
+  display: block;
+}
+
+.cart h2 {
+  font-size: 1.8rem;
+  color: #323754;
+  margin-top: 0;
+  text-align: center;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-item {
+  display: flex;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-item .item-details {
+  flex: 1;
+}
+
+.cart-item h3 {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #323754;
+}
+
+.cart-item p {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+
+.cart-item .item-actions button {
+  border: 2px solid black;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.cart-item .quantity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.cart-item .quantity button {
+  border: 2px solid black;
+  color: black;
+  padding: 0.25rem 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 1rem;
+}
+
+.cart-item .quantity p {
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.cart .total {
+  font-size: 1rem;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.cart .checkout-button {
+  border: 2px solid black;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 0.8rem;
+}
+.cart .back-button {
+  border: 2px solid black;
+  color: black;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 0.8rem;
+}
+
+.checkout-button {
+  margin-right: 1rem;
+}
+
+.checkout-message {
+  font-size: 1.4rem;
+  margin-top: 30px;
+  color: lightgray;
+  text-align: center;
+}
+
+.no-results,
+.empty-cart {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #777;
+  margin-top: 20px;
+}
+
+
+/* GenerateBill.css */
+.generate-bill {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.generate-bill h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.generate-bill form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.generate-bill label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.generate-bill input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.generate-bill button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.generate-bill button:disabled {
+  background-color: #ccc;
+}
+
+.generate-bill button[type="button"]:hover:not(:disabled) {
+  background-color: lightgray;
+}
+
+.bill-preview {
+  margin-top: 20px;
+  padding: 20px;
+}
+.bill-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.bill-items th, .bill-items td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center; 
+}
+
+.bill-items th {
+  background-color: #f4f4f4;
+}
+
+.printBill{
+  width: 50%;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: white;
+}
+
+/* Modal.css */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.popup{
+    position: fixed;
+    top: 4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 0.3rem;
+    border-radius: 8px;
+    z-index: 1000;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.popup.success {
+  background-color: #28a745; /* Green */
+}
+
+/* Error popup */
+.popup.error {
+  background-color: #dc3545; /* Red */
+}
+
+@media (max-width: 768px) {
+
+  .Content-Buttons .button {
+    width: 100%;
+  }
+
+  .appLogo {
+    margin-right: 0;
+  }
+
+  .cart-item h3 {
+    font-size: 1.2rem; /* Adjusted font-size for smaller screens */
+  }
+}
+
